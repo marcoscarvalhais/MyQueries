@@ -1,0 +1,16 @@
+SELECT
+SubscriberKey,
+TriggeredSendCustomerKey,
+URL
+
+FROM
+_Click
+
+WHERE
+TriggeredSendCustomerKey = ''
+OR
+TriggeredSendCustomerKey = ''
+OR
+TriggeredSendCustomerKey = ''
+AND
+URL = ''
