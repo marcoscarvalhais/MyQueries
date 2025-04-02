@@ -1,0 +1,25 @@
+SELECT 
+    e.CNPJ,
+    e.GRUPO,
+    e.EMAIL,
+    CASE
+        WHEN s.EventDate IS NOT NULL THEN '1' 
+        ELSE '0' 
+    END AS RECEBIDO,
+    CASE 
+        WHEN o.EventDate IS NOT NULL THEN '1' 
+        ELSE '0' 
+    END AS ABERTURA,
+    CASE 
+        WHEN c.EventDate IS NOT NULL THEN '1' 
+        ELSE '0' 
+    END AS CLIQUE,
+    c.URL AS URL_DO_CLIQUE
+FROM 
+    [NOME DA EXTENSÃO DE DADOS] e
+LEFT JOIN 
+    _Sent s ON e.EMAIL = s.SubscriberKey AND s.TriggeredSendCustomerKey = 'External Key'
+LEFT JOIN 
+    _Open o ON e.EMAIL = o.SubscriberKey AND o.TriggeredSendCustomerKey = 'External Key'
+LEFT JOIN 
+    _Click c ON e.EMAIL = c.SubscriberKey AND c.TriggeredSendCustomerKey = 'External Key'
