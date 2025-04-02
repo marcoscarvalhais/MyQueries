@@ -1,0 +1,10 @@
+SELECT
+ORIGEM, 
+Nome1,
+[Email Address]
+
+FROM
+ENT.[Inbound Marketing]
+
+WHERE
+ORIGEM = 'URL'
