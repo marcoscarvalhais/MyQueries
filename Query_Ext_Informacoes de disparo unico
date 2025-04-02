@@ -1,0 +1,16 @@
+SELECT
+SubscriberKey,
+JobID,
+URL
+
+FROM
+_Click
+
+WHERE
+JobID = ''
+OR
+JobID = ''
+OR
+JobID = ''
+AND
+URL = ''
